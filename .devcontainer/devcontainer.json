@@ -6,7 +6,7 @@
       "label": "Application",
       "onAutoForward": "ignore"
     }
-  }, 
+  },
   "workspaceFolder": "/workdir",
   "customizations": {
     "vscode": {
