@@ -10,7 +10,12 @@
   "workspaceFolder": "/workdir",
   "customizations": {
     "vscode": {
-      "extensions": ["eamodio.gitlens", "dbaeumer.vscode-eslint", "esbenp.prettier-vscode"],
+      "extensions": [
+        "eamodio.gitlens",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss"
+      ],
       "settings": {
         "prettier.configPath": ".prettierrc.json",
         "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -18,7 +23,10 @@
         "editor.codeActionsOnSave": {
           "source.fixAll.eslint": true
         },
-        "editor.tabSize": 2
+        "editor.tabSize": 2,
+        "files.associations": {
+          "*.css": "tailwindcss"
+        }
       }
     }
   }
