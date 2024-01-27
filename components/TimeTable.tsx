@@ -10,6 +10,7 @@ type TimeTableProps = {
 
 export default function TimeTable({ times, playerNames }: TimeTableProps) {
   const tableHeads = playerNames;
+  const tableDatas = ['メモ'].concat(times);
 
   return (
     <Table className='table-fixed border-0'>
@@ -31,7 +32,7 @@ export default function TimeTable({ times, playerNames }: TimeTableProps) {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {times.map((time) => {
+        {tableDatas.map((time) => {
           const classes = 'p-4 border border-blue-gray-50';
 
           return (
