@@ -7,6 +7,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { useRouter } from 'next/navigation';
 
 const formSchema = z
   .object({
@@ -121,8 +122,17 @@ export default function MemoForm() {
     resolver: zodResolver(formSchema),
   });
 
+  const router = useRouter();
   const onSubmit = (values: z.infer<typeof formSchema>) => {
-    console.log(values);
+    const params = new URLSearchParams({
+      players: values.players.toString(),
+      days: values.days.toString(),
+      startTime: values.startTime.toString(),
+      endTime: values.endTime.toString(),
+      intervalTime: values.intervalTime.toString(),
+    });
+
+    router.push(`/memo?${params.toString()}`);
   };
 
   const HOURS: OptionType[] = (() => {
